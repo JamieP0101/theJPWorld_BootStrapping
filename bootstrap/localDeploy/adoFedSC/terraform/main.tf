@@ -5,7 +5,7 @@ module "build_federated_service_connection" {
   adoProjectId                 = var.adoProjectId
   serviceConnectionName        = local.buildServiceConnectionName
   scDescription                = var.scDescription
-  umiPrincipalId               = data.azurerm_user_assigned_identity.build.principal_id
+  umiPrincipalId               = data.azurerm_user_assigned_identity.build.client_id
   tenantId                     = data.azurerm_user_assigned_identity.build.tenant_id
   subscriptionId_Application   = var.subscriptionId_Application
   subscriptionName_Application = var.subscriptionName_Application
@@ -19,7 +19,7 @@ module "deploy_federated_service_connection" {
   adoProjectId                 = var.adoProjectId
   serviceConnectionName        = local.deployServiceConnectionName
   scDescription                = var.scDescription
-  umiPrincipalId               = data.azurerm_user_assigned_identity.deploy.principal_id
+  umiPrincipalId               = data.azurerm_user_assigned_identity.deploy.client_id
   tenantId                     = data.azurerm_user_assigned_identity.deploy.tenant_id
   subscriptionId_Application   = var.subscriptionId_Application
   subscriptionName_Application = var.subscriptionName_Application
